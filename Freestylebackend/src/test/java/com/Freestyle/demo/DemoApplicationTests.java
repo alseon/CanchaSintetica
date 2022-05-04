@@ -1,10 +1,10 @@
-package com.example.freestyle;
+package com.Freestyle.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FreestyleApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
