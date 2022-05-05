@@ -4,10 +4,34 @@
  */
 package Repository;
 
+import java.util.Optional;
+import models.Person;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Usuario
  */
-public interface PersonRepository {
+@Repository
+public interface PersonRepository extends CrudRepository<Person,Long>{
+
+    @Override
+    public void delete(Person entity);
+
+    @Override
+    public void deleteById(Long id);
+
+    @Override
+    public boolean existsById(Long id);
+
+    @Override
+    public Iterable<Person> findAll();
+
+    @Override
+    public Optional<Person> findById(Long id);
+
+    @Override
+    public <S extends Person> S save(S entity);
     
 }

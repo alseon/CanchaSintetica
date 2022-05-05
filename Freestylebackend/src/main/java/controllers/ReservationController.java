@@ -17,17 +17,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Usuario
- */
 
 @CrossOrigin(origins="*",allowedHeaders="*")
 @RestController
 public class ReservationController {
-    @Autowired                                                                  //inicializar repositorio
+    @Autowired                                                            //inicializar repositorio
     ReservationRepository repository;
-    
     
     @GetMapping("/reservacion")
      public Iterable<Reservation> findAll(){
@@ -43,6 +38,7 @@ public class ReservationController {
         //return repository.findByDocumento(documento);
         return repository.findById(documento);
     }
+    //6832918 
     @PutMapping("/reservacion")
     public String UpdateID (@RequestBody Reservation r){
         Long id = r.getId();
@@ -57,11 +53,10 @@ public class ReservationController {
         }
         return "ok";
     }
-    @DeleteMapping("/servicio/{id}")
+    @DeleteMapping("/reservacion/{id}")
 
     public String deleteId(@PathVariable Long id){
         repository.deleteById(id);
         return "ok";
     } 
 }
-

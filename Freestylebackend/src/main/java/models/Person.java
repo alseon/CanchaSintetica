@@ -21,13 +21,23 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)    //IDENTITY
     private int identificacion;
     private String names;
+    private String telefono;
 
     public Person() {
     }
 
-    public Person(int identificacion, String names) {
+    public Person(int identificacion, String names, String tel) {
         this.identificacion = identificacion;
         this.names = names;
+        this.telefono= tel;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public int getIdentificacion() {

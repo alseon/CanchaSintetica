@@ -21,28 +21,28 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    //IDENTITY
     private Long id ;
-    private String nombre;
     private int hora;
     public Date fecha;
+    private int cancha;
+    private int solicitante;
 
     public Reservation() {
     }
 
-    public Reservation(Long id, String nombre, int hora, Date fecha) {
+    public Reservation(Long id, String nombre, int hora, Date fecha,int cancha, int solicitante) {
         this.id = id;
-        this.nombre = nombre;
         this.hora = hora;
         this.fecha = fecha;
+        this.cancha = cancha;
+        this.solicitante= solicitante;
+        
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    
     public void setHora(int hora) {
         this.hora = hora;
     }
@@ -55,9 +55,6 @@ public class Reservation {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
     public int getHora() {
         return hora;
