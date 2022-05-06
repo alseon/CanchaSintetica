@@ -1,0 +1,69 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar por Hora"
+        [(ngModel)]="hora"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchHora()"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Lista de Personas</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tutorial of tutorials; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tutorial, i)" 
+      >
+        {{tutorial.title}}
+        
+        
+        
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+      Eliminar Todos
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentTutorial">
+      <h4>Informacion</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentTutorial.title }}
+      </div>
+      <div>
+        <label><strong>Celular:</strong></label>
+        {{ currentTutorial.description }}
+      </div>
+      <div>
+        <label><strong>Cancha:</strong></label> {{ currentTutorial.cancha }}
+      </div>
+      <div>
+        <label><strong>Hora:</strong></label> {{ currentTutorial.hora }}
+      </div>
+      
+
+      <a class="m-3 btn btn-sm btn-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
+        Editar
+      </a>
+    </div>
+
+    <div *ngIf="!currentTutorial">
+      <br />
+      <p>Por favor, haga clic para ver informacion...</p>
+    </div>
+  </div>
+</div>

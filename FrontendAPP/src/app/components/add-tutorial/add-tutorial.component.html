@@ -1,0 +1,59 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="tutorial.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Celular</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="tutorial.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cancha">Cancha</label>
+        <input
+          class="form-control"
+          id="cancha"
+          required
+          [(ngModel)]="tutorial.cancha"
+          name="cancha"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="hora">Hora</label>
+        <input
+          class="form-control"
+          id="hora"
+          required
+          [(ngModel)]="tutorial.hora"
+          name="hora"
+        />
+      </div>
+
+      
+
+      <button (click)="saveTutorial()" class="btn btn-success">Agregar</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>¡¡La persona se agrego con exito!!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Aceptar</button>
+    </div>
+  </div>
+</div>
