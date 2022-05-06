@@ -25,7 +25,7 @@ public class ReservationController {
     ReservationRepository repository;
     
     @GetMapping("/reservacion")
-     public Iterable<Reservation> findAll(){
+    public Iterable<Reservation> findAll(){
          return repository.findAll();
     }
     @PostMapping("/reservacion")
@@ -54,7 +54,6 @@ public class ReservationController {
         return "ok";
     }
     @DeleteMapping("/reservacion/{id}")
-
     public String deleteId(@PathVariable Long id){
         repository.deleteById(id);
         return "ok";
